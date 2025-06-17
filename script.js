@@ -36,8 +36,8 @@ function shuffle(array) { //Fisher-Yates
 };
 
 function generateCardEasy(){
-  count = 10;
-  totalPairs = 2; // 4x4 grid
+  count = 20;
+  totalPairs = 8; // 4x4 grid
   totalCards = 16;
   showCount.innerHTML = `Count: ${count}`
   levelEasy();
@@ -55,7 +55,8 @@ function generateCardEasy(){
 }
 function generateCardMedium(){
  
-  count = 2;
+  count = 45;
+  totalPairs = 8;
   showCount.innerHTML = `Count: ${count}`
   levelMedium();
 
