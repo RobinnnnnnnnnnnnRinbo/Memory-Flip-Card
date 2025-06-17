@@ -1,0 +1,117 @@
+#title {
+    text-align: center;
+    color: white;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+body {
+    background-color: rgb(35, 41, 41);
+}
+#main.easy{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 190px); /* Two equal columns */
+    grid-template-rows: repeat(4, 190px); /* Four equal rows */
+    gap: 14px;
+}
+#main.easy > div > .front {
+    /* display: none; */
+    border-radius: 10px;
+    height: 190px;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(13, 117, 117, 0.329);
+    text-align: center;
+}
+#main.easy > div > .back {
+    /* display: none; */
+    border-radius: 10px;
+    display: none;
+    height: 190px;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(0, 243, 243, 0.329);
+    text-align: center;
+    font-size: 70px;
+    align-items: center;
+    justify-content: center;
+}
+#main.medium{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6, 120px); /* Two equal columns */
+    grid-template-rows: repeat(6, 120px); /* Four equal rows */
+    gap: 10px;
+}
+#main.medium > div > .front {
+    /* display: none; */
+    border-radius: 10px;
+    height: 120px;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(13, 117, 117, 0.329);
+    text-align: center;
+}
+#main.medium > div > .back {
+    /* display: none; */
+    border-radius: 10px;
+    display: none;
+    height: 120px;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(0, 243, 243, 0.329);
+    text-align: center;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+}
+#main.hard{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(8, 90px); /* Two equal columns */
+    grid-template-rows: repeat(8, 90px); /* Four equal rows */
+    gap: 8px;
+}
+#main.hard > div > .front {
+    /* display: none; */
+    border-radius: 10px;
+    height: 90px;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(13, 117, 117, 0.329);
+    text-align: center;
+}
+#main.hard > div > .back {
+    /* display: none; */
+    border-radius: 10px;
+    display: none;
+    height: 90px;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(0, 243, 243, 0.329);
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+}
+p {
+    text-align: center;
+    font-family: "Hanken Grotesk", sans-serif;
+    color: white;
+}
+button {
+    display: block;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    width: 150px;
+    margin: 20px auto;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(0, 243, 243, 0.329);
+    border-radius: 20px;
+}
+.lose-message {
+    color: white;
+    text-align: center;
+}
+.lose-div {
+    margin-top: 200px;
+    justify-content: center;
+    height: 150px;
+    width: 500px;
+    font-size: 43px;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(0, 243, 243, 0.144);
+    border-radius: 20px;
+}
