@@ -37,10 +37,10 @@ function shuffle(array) { //Fisher-Yates
 
 function generateCardEasy(){
   levelSelected = "easy";
-  count = 20;
+  count = 16;
   totalPairs = 8; // 4x4 grid
   totalCards = 16;
-  showCount.innerHTML = `Count: ${count}`
+  showCount.innerHTML = `Counts left: ${count}`
   levelEasy();
 
   const cards = document.querySelectorAll('.card');
@@ -56,9 +56,9 @@ function generateCardEasy(){
 }
 function generateCardMedium(){
   levelSelected = "medium";
-  count = 45;
+  count = 36;
   totalPairs = 8;
-  showCount.innerHTML = `Count: ${count}`
+  showCount.innerHTML = `Counts left: ${count}`
   levelMedium();
 
   const cards = document.querySelectorAll('.card');
@@ -75,8 +75,8 @@ function generateCardMedium(){
 function generateCardHard(){
   levelSelected = "hard";
   totalPairs = 16; // 8x8 grid
-  count = 78;
-  showCount.innerHTML = `Count: ${count}`
+  count = 64;
+  showCount.innerHTML = `Counts left: ${count}`
   levelHard();
 
   const cards = document.querySelectorAll('.card');
@@ -95,12 +95,6 @@ function flipCard(){
 
   if (this.classList.contains('flipped')) return;
   if (!canFlip || flippedCards.length >= 2) return;
-
-  const backElement = this.querySelector('.back');
-  const frontElement = this.querySelector('.front');
-
-  backElement.style.display = "flex";
-  frontElement.style.display = "none";
 
   this.classList.add('flipped');
   flippedCards.push(this);
@@ -131,23 +125,15 @@ function checkMatch(){
                             <p class="menu" onclick="location.reload();">Main Menu</p>
                           </div> 
                         </div>`
-    }
-  } else { 
+    }  } else { 
     flippedCards.forEach(card => {
-
-    card.classList.remove('flipped');
-
-    const backElement = card.querySelector('.back');
-    const frontElement = card.querySelector('.front');
-
-    backElement.style.display = "none";
-    frontElement.style.display = "flex";
+      card.classList.remove('flipped');
     });
     flippedCards = [];
     
     count--;
 
-    showCount.innerHTML = `Count: ${count}`
+    showCount.innerHTML = `Counts left: ${count}`
 
     if (count <= 0){
       main.style.display = 'flex';
