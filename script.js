@@ -36,6 +36,7 @@ function shuffle(array) { //Fisher-Yates
 };
 
 function generateCardEasy(){
+  levelSelected = "easy";
   count = 20;
   totalPairs = 8; // 4x4 grid
   totalCards = 16;
@@ -54,7 +55,7 @@ function generateCardEasy(){
 
 }
 function generateCardMedium(){
- 
+  levelSelected = "medium";
   count = 45;
   totalPairs = 8;
   showCount.innerHTML = `Count: ${count}`
@@ -72,7 +73,8 @@ function generateCardMedium(){
 
 }
 function generateCardHard(){
- 
+  levelSelected = "hard";
+  totalPairs = 16; // 8x8 grid
   count = 78;
   showCount.innerHTML = `Count: ${count}`
   levelHard();
@@ -122,8 +124,12 @@ function checkMatch(){
     if (totalPairs <= 0){
       main.style.display = 'flex';
       showCount.style.display = "none";
-      main.innerHTML = `<div class="lose-div">
-                          <p class="lose-message">Kmoch Ouy</p>
+      main.innerHTML = `<div class="message-div">
+                          <p class="message">You Win</p>
+                          <div class="option">
+                            <p class="restart" onclick="restartGame();">Restart</p>
+                            <p class="menu" onclick="location.reload();">Main Menu</p>
+                          </div> 
                         </div>`
     }
   } else { 
@@ -146,12 +152,16 @@ function checkMatch(){
     if (count <= 0){
       main.style.display = 'flex';
       showCount.style.display = "none";
-      main.innerHTML = `<div class="lose-div">
-                          <p class="lose-message">Janh Haaaaa</p>
+      main.innerHTML =  `<div class="message-div">
+                          <p class="message">You Lose</p>
+                          <div class="option">
+                            <p class="restart" onclick="restartGame();">Restart</p>
+                            <p class="menu" onclick="location.reload();">Main Menu</p>
+                          </div>  
                         </div>`
-    }
     
-  }
+    }
+  }  
   canFlip = true;
 }
 
@@ -185,6 +195,27 @@ function levelHard(){
                         <div data-value="${cardHard[card]}" class="back">${cardHard[card]}</div>
                       </div>`;
   }
+}
+function restartGame(){
+  const messageDiv = document.querySelector('.message-div')
+  if (levelSelected === "easy") {
+    messageDiv.style.display = "none";
+    showCount.style.display = "";
+    main.style.display = 'grid';
+    levelSelected = "";
+    generateCardEasy();}
+  if (levelSelected === "medium") {
+    messageDiv.style.display = "none";
+    showCount.style.display = "";
+    main.style.display = 'grid';
+    levelSelected = "";
+    generateCardMedium();}
+  if (levelSelected === "hard") {
+    messageDiv.style.display = "none";
+    showCount.style.display = "";
+    main.style.display = 'grid';
+    levelSelected = "";
+    generateCardHard();}
 }
 easyBtn.addEventListener("click", generateCardEasy);
 mediumBtn.addEventListener("click", generateCardMedium);

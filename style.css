@@ -101,16 +101,44 @@ button {
     background-color: rgba(0, 243, 243, 0.329);
     border-radius: 20px;
 }
-.lose-message {
+.message {
     color: white;
     text-align: center;
 }
-.lose-div {
-    margin-top: 200px;
-    justify-content: center;
+.message-div {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     height: 150px;
     width: 500px;
     font-size: 43px;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(0, 243, 243, 0.144);
+    border-radius: 20px;
+}
+.option {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+.restart {
+    font-size: 15px;
+    height: 40px;
+    margin-inline: 15px;
+    width: 200px;
+    align-content: center;
+    border: solid 1px rgb(16, 136, 86);
+    background-color: rgba(0, 243, 243, 0.144);
+    border-radius: 20px;
+}
+.menu {
+    font-size: 15px;
+    height: 40px;
+    width: 200px;
+    align-content: center;
     border: solid 1px rgb(16, 136, 86);
     background-color: rgba(0, 243, 243, 0.144);
     border-radius: 20px;
