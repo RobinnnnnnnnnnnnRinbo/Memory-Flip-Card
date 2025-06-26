@@ -37,7 +37,7 @@ function shuffle(array) { //Fisher-Yates
 
 function generateCardEasy(){
   levelSelected = "easy";
-  count = 16;
+  count = 20;
   totalPairs = 8; // 4x4 grid
   totalCards = 16;
   showCount.innerHTML = `Counts left: ${count}`
@@ -56,7 +56,7 @@ function generateCardEasy(){
 }
 function generateCardMedium(){
   levelSelected = "medium";
-  count = 36;
+  count = 45;
   totalPairs = 8;
   showCount.innerHTML = `Counts left: ${count}`
   levelMedium();
@@ -75,7 +75,7 @@ function generateCardMedium(){
 function generateCardHard(){
   levelSelected = "hard";
   totalPairs = 16; // 8x8 grid
-  count = 64;
+  count = 78;
   showCount.innerHTML = `Counts left: ${count}`
   levelHard();
 
@@ -95,6 +95,12 @@ function flipCard(){
 
   if (this.classList.contains('flipped')) return;
   if (!canFlip || flippedCards.length >= 2) return;
+
+  const backElement = this.querySelector('.back');
+  const frontElement = this.querySelector('.front');
+
+  backElement.style.display = "flex";
+  frontElement.style.display = "none";
 
   this.classList.add('flipped');
   flippedCards.push(this);
@@ -125,9 +131,17 @@ function checkMatch(){
                             <p class="menu" onclick="location.reload();">Main Menu</p>
                           </div> 
                         </div>`
-    }  } else { 
+    }
+  } else { 
     flippedCards.forEach(card => {
-      card.classList.remove('flipped');
+
+    card.classList.remove('flipped');
+
+    const backElement = card.querySelector('.back');
+    const frontElement = card.querySelector('.front');
+
+    backElement.style.display = "none";
+    frontElement.style.display = "flex";
     });
     flippedCards = [];
     
